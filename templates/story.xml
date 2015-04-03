@@ -1,0 +1,24 @@
+<story
+	id=""
+	summary=""
+	points=""
+	owner=""
+	status=""
+	priority=""
+>
+	<behavior
+		as_a=""
+		given_that=""
+		i_want_to=""
+	>
+		<scenarios>
+			<!-- <scenario/> -->
+		</scenarios>
+	</behavior>
+	<dependencies>
+		<!-- <dependency storyId="" /> -->
+	</dependencies>
+	<dependants>
+		<!-- <dependant storyId="" /> -->
+	</dependants>
+</story>

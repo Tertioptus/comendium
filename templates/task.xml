@@ -1,0 +1,14 @@
+<task
+	id=""
+	description=""
+	owner=""
+	status=""
+	priority=""
+>
+	<dependencies>
+		<!-- <dependency taskId="" /> -->
+	</dependencies>
+	<dependants>
+		<!-- <dependant taskId="" /> -->
+	</dependants>
+</task>
