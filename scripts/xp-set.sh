@@ -1,3 +1,18 @@
 #!/bin/bash
 
-cd ..
+CURRENT_PATH=`pwd`
+
+OIFS=$IFS
+IFS=':'
+FIELD=($1)
+FIELD_TYPE=${FIELD[0]}
+FIELD_VALUE=${FIELD[1]}
+
+echo "FIELDS ${FIELD_TYPE} ${FIELD_VALUE}"
+
+IFS=$OIFS
+NEW_PATH=${CURRENT_PATH/$FIELD\:.*/$FIELDVALUE} 
+echo ${NEW_PATH}
+#cd ..
+
+#mv ${CURRENT_PATH} "${NEW_PATH}"
