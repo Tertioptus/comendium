@@ -34,6 +34,6 @@ echo new path: $NEW_PATH
 
 cd ..
 
-mv ${CURRENT_PATH} "`dirname ${CURRENT_PATH}`/${NEW_PATH}"
+mv "${CURRENT_PATH}" "`dirname ${CURRENT_PATH}`/${NEW_PATH}"
 
 cd "${NEW_PATH}"
