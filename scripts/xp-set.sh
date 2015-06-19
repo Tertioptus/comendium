@@ -9,14 +9,18 @@ IFS=':'
 FIELD=($1)
 FIELD_TYPE=${FIELD[0]}
 FIELD_VALUE=${FIELD[1]}
+IFS=$OIFS
 
-if [[ ! $BASE_PATH =~ $.*FIELD_TYPE:.* ]]
+if ! [[ $BASE_PATH =~ .*$FIELD_TYPE:.* ]]
 then # Add new field if none present
-	NEW_PATH=$BASE_PATH|$1
+	echo $FIELD_TYPE 
+	NEW_PATH=$BASE_PATH"|"$1
 else # Find field and update
+	OIFS=$IFS
 	IFS='|'
 	FIELD_SET=($BASE_PATH)
-
+	IFS=$OIFS
+	
 	echo "[FIELDS] type: ${FIELD_TYPE}; value: ${FIELD_VALUE}"
 
 
@@ -36,7 +40,6 @@ else # Find field and update
 	done
 fi
 
-IFS=$OIFS
 
 echo new path: $NEW_PATH
 
