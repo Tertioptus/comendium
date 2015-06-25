@@ -20,14 +20,14 @@ IFS=$OIFS
 
 for field in ${FIELD_SET[@]}
 do
-	if [[ $field =~ $d:.* ]]; then DEPENDENCY=$field; fi
-	if [[ $field =~ $p:.* ]]; then POINTS=$field; fi
-	if [[ $field =~ $s:.* ]]; then STATUS=$field; fi
-	if [[ $field =~ $t:.* ]]; then TRACK=$field; fi
-	if [[ $field =~ $c:.* ]]; then CONTEXT=$field; fi
-	if [[ $field =~ $u:.* ]]; then USER=$field; fi
-	if [[ $field =~ $a:.* ]]; then ACTION=$field; fi
-	if [[ $field =~ $r:.* ]]; then RESOURCE=$field; fi
+	if [[ $field =~ d:.* ]]; then DEPENDENCY=$field; fi
+	if [[ $field =~ p:.* ]]; then POINTS=$field; fi
+	if [[ $field =~ s:.* ]]; then STATUS=$field; fi
+	if [[ $field =~ t:.* ]]; then TRACK=$field; fi
+	if [[ $field =~ c:.* ]]; then CONTEXT=$field; fi
+	if [[ $field =~ u:.* ]]; then USER=$field; fi
+	if [[ $field =~ a:.* ]]; then ACTION=$field; fi
+	if [[ $field =~ r:.* ]]; then RESOURCE=$field; fi
 done
 
 NEW_PATH="$DEPENDENCY|$POINTS|$STATUS|$TRACK|$CONTEXT|$USER|$ACTION|$RESOURCE"
