@@ -13,7 +13,6 @@ IFS=$OIFS
 
 if ! [[ $BASE_PATH =~ .*$FIELD_TYPE:.* ]]
 then # Add new field if none present
-	echo $FIELD_TYPE 
 	NEW_PATH=$BASE_PATH"|"$1
 else # Find field and update
 	OIFS=$IFS
@@ -21,9 +20,6 @@ else # Find field and update
 	FIELD_SET=($BASE_PATH)
 	IFS=$OIFS
 	
-	echo "[FIELDS] type: ${FIELD_TYPE}; value: ${FIELD_VALUE}"
-
-
 	for field in ${FIELD_SET[@]}
 	do
 		if [[ ${#NEW_PATH}>0 ]]
@@ -39,9 +35,6 @@ else # Find field and update
 		fi
 	done
 fi
-
-
-echo new path: $NEW_PATH
 
 cd ..
 
