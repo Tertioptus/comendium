@@ -4,7 +4,6 @@ CURRENT_PATH=`pwd`
 BASE_PATH=`basename "$CURRENT_PATH"`
 NEW_PATH=""
 
-DEPENDENCY="d:00"
 POINTS="p:00"
 STATUS="s:u"
 IDENTIFICATION="i:"
@@ -20,7 +19,6 @@ IFS=$OIFS
 
 for field in ${FIELD_SET[@]}
 do
-	if [[ $field =~ d:.* ]]; then DEPENDENCY=$field; fi
 	if [[ $field =~ p:.* ]]; then POINTS=$field; fi
 	if [[ $field =~ s:.* ]]; then STATUS=$field; fi
 	if [[ $field =~ i:.* ]]; then IDENTIFICATION=$field; fi
@@ -30,7 +28,7 @@ do
 	if [[ $field =~ r:.* ]]; then RESOURCE=$field; fi
 done
 
-NEW_PATH="$STATUS|$DEPENDENCY|$POINTS|$IDENTIFICATION|$CONTEXT|$USER|$ACTION|$RESOURCE"
+NEW_PATH="$STATUS|$POINTS|$IDENTIFICATION|$CONTEXT|$USER|$ACTION|$RESOURCE"
 
 cd ..
 
