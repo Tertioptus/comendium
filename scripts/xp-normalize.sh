@@ -7,7 +7,6 @@ NEW_PATH=""
 DEPENDENCY="d:00"
 POINTS="p:00"
 STATUS="s:u"
-TRACK="t:00"
 IDENTIFICATION="i:"
 CONTEXT="c:"
 USER="u:"
@@ -24,7 +23,6 @@ do
 	if [[ $field =~ d:.* ]]; then DEPENDENCY=$field; fi
 	if [[ $field =~ p:.* ]]; then POINTS=$field; fi
 	if [[ $field =~ s:.* ]]; then STATUS=$field; fi
-	if [[ $field =~ t:.* ]]; then TRACK=$field; fi
 	if [[ $field =~ i:.* ]]; then IDENTIFICATION=$field; fi
 	if [[ $field =~ c:.* ]]; then CONTEXT=$field; fi
 	if [[ $field =~ u:.* ]]; then USER=$field; fi
@@ -32,7 +30,7 @@ do
 	if [[ $field =~ r:.* ]]; then RESOURCE=$field; fi
 done
 
-NEW_PATH="$STATUS|$DEPENDENCY|$POINTS|$TRACK|$IDENTIFICATION|$CONTEXT|$USER|$ACTION|$RESOURCE"
+NEW_PATH="$STATUS|$DEPENDENCY|$POINTS|$IDENTIFICATION|$CONTEXT|$USER|$ACTION|$RESOURCE"
 
 cd ..
 
