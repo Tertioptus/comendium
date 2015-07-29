@@ -5,21 +5,22 @@
 #
 # Scenarios:
 # xp-depend 00-01
-
+CHILD_STORY_PATH=${PWD}
+CHILD_STORY=`basename ${CHILD_STORY_PATH}`
+CHILD_ID=${STORY:11:5}
 
 #1.  find selected story with find by id
+PARENT_PATH=(`find .. -name *${1}*`) 
 
-#2.  Or, create new story
+#2.  create symbolic link to story
+ln -s $PARENT_PATH dependency.$1
 
-#3.  create symbolic link to story
-ln -s dependency.$1
-
-#4.  set this story to suspended
+#3.  set this story to suspended
 xp-set s:s
 
-#5.  create symbolic link to this current story in dependent story
+#4.  create symbolic link to this current story in dependent story
 cd dependency.$1
-ln -s dependent.
+ln -s $CHILD_STORY_PATH dependent.$CHILD_ID
 
-#6.  run dependency check on dependant story 
-
+#5. run point count on parent
+#xp-point-count
