@@ -1,9 +1,9 @@
-s:[status]|p:[points]|i:[track]-[identification]|c:[context]|u:[user/actor]|a:[action/behavior]|r:[resource]/
+s:[status,1]|p:[points,3]|i:[track id,2]-[story id,2]|c:[context]|u:[user/actor]|a:[action/behavior]|r:[resource]/
 	tag.story
 	contribution:[comma delimited user names]
 		achievement.[Achievement]
-	*dependency.[id/name]/
-	*dependant.[id/name]/
+	*dependency.[track id]-[story id]/
+	*dependent.[track id]-[story id]/
 	*tag.[keyword]
 
 *-zero to many
