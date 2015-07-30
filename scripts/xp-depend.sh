@@ -7,13 +7,12 @@
 # xp-depend 00-01
 CHILD_STORY_PATH=${PWD}
 CHILD_STORY=`basename ${CHILD_STORY_PATH}`
-CHILD_ID=${STORY:11:5}
+CHILD_ID=${CHILD_STORY:11:5}
 
 #1.  find selected story with find by id
-PARENT_PATH=(`find .. -name *${1}*`) 
-
+PARENT_PATH+=(`find .. -name "*${1}*"`) 
 #2.  create symbolic link to story
-ln -s $PARENT_PATH dependency.$1
+#ln -s $PARENT_PATH dependency.$1
 
 #3.  set this story to suspended
 xp-set s:s
