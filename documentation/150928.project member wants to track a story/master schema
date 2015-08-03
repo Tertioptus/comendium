@@ -2,11 +2,12 @@ s:[status,1]|p:[points,2]|i:[track id,2]-[story id,2]|c:[context]|u:[user/actor]
 	tag.story
 	?narrative
 	+scenario.[Scenario]/
-		+test.[pass/fail]|[Reporter]
+		+test.[pass/fail]|[automated test/product owner]
 	contribution:[comma delimited user names]
 		achievement.[Achievement]
 	*dependency.[track id]-[story id]/
 	*dependent.[track id]-[story id]/
+	*bug.[Bug]
 	*tag.[keyword]
 
-*-zero to many  +-one to many ?-zero or one
+*-zero to many	+-one to many	?-zero or one
