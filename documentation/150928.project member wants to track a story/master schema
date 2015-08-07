@@ -1,8 +1,9 @@
-s:[status,1]|p:[points,2]|i:[track id,2]-[story id,2]|c:[context]|u:[user/actor]|a:[action/behavior]|r:[resource]/
+s:[status,1]|l:[level,2]|i:[backlog id,2]-[story id,2]|c:[context,*]|u:[user/actor,*]|a:[action/behavior,*]|r:[resource,*]/
 	tag.story
 	?narrative
 	+scenario.[Scenario]/
 		+test.[pass/fail]|[automated test/product owner]
+	?points.[feature story points]
 	contribution:[comma delimited user names]
 		achievement.[Achievement]
 	*dependency.[track id]-[story id]/
@@ -11,3 +12,15 @@ s:[status,1]|p:[points,2]|i:[track id,2]-[story id,2]|c:[context]|u:[user/actor]
 	*tag.[keyword]
 
 *-zero to many	+-one to many	?-zero or one
+
+s - status, labels set such that the alphanumeric ordering represents priority of execution
+	[_] - unintitated/undocumented story
+	0 - orphaned, non-feature story without dependents / non-deliverable
+	a - audit, needs verification
+	b - bot it, needs an automated test
+	c - configure/code/construct
+	s - suspended, waiting for story deliverable
+	x - completed/done/closed
+
+l - level, priority ranking system
+	Number of dependents minus lowest level of dependents
