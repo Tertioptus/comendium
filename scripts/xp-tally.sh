@@ -5,11 +5,10 @@ if [[ `pwd` =~ c:feature ]]
 then
 	POINTS_DIRS=()
 	POINTS_DIRS+=(`ls points.*`)
-	if [[ ! -z POINTS_DIRS ]]
+	if [ -n POINTS_DIRS ]
 	then
-		POINTS=${POINTS_DIRS[0]:2}
-  		LEVEL=99-$POINTS 
-	else
+		POINTS=${POINTS_DIRS[0]:7}
+  		LEVEL=$((99-$POINTS)) 
 	fi
 <<COMMENT1
 else
