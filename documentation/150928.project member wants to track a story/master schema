@@ -1,7 +1,7 @@
 backlog/
 	stories
 history/
-	release.[title].[start date - target date]
+	release.[version].[title].[start date - target date]
 		tag.release
 		story-references
 aspect/
