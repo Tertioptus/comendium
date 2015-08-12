@@ -6,6 +6,8 @@ all:
 
 install:
 	@echo ""
+	@echo "Installing xp"
+
 	mkdir -p $(INSTALL_DIR)
 	cp $(SOURCE_DIR) $(INSTALL_DIR)
 	
@@ -20,7 +22,13 @@ install:
 	@echo 'USAGE:'
 	@echo '------'
 
+reinstall:
+	make uninstall --no-print-directory
+	make install --no-print-directory
+
 uninstall:
+	@echo ""
+	@echo 'Uninstalling xp'
 	rm -rf $(INSTALL_DIR)
 	sed -i '/compendium/ d' ~/.bashrc
 
