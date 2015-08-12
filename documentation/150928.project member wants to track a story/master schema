@@ -1,3 +1,16 @@
+backlog/
+	stories
+history/
+	release.[title].[start date - target date]
+		tag.release
+		story-references
+aspect/
+	profile
+		tag.profile
+		user
+		profile subscriptions
+
+
 s:[status,1]|l:[level,2]|i:[backlog id,2]-[story id,2]|c:[context,*]|u:[user/actor,*]|a:[action/behavior,*]|r:[resource,*]/
 	tag.story
 	?narrative
