@@ -10,17 +10,19 @@ then
 		POINTS=${POINTS_DIRS[0]:7}
   		LEVEL=$((99-$POINTS)) 
 	fi
-<<COMMENT1
 else
-	if dependets
+	links=(`ls depend*nt*`)
+	for l in $links
+	do
+		echo `readlink $l`
+	done
+	if [[ -n $links  ]] 
 	then
-		LEVEL= lowest level among dependents - number of dependents
-
+		echo "LEVEL= lowest level among dependents - number of dependents"
 	else	#Orphan the story
-    	#xp-set s:0
-    	LEVEL=00
+    		echo "xp-set s:0"
+    		LEVEL=00
 	fi
-COMMENT1
 fi
 
 echo `pwd`
