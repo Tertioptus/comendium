@@ -3,7 +3,6 @@
 
 if [[ `pwd` =~ c:feature ]]
 then
-	POINTS_DIRS=()
 	POINTS_DIRS+=(`ls points.*`)
 	if [ -n POINTS_DIRS ]
 	then
@@ -11,7 +10,7 @@ then
   		LEVEL=$((99-$POINTS)) 
 	fi
 else
-	links=(`ls depend*nt*`)
+	links=(`ls dependent.*`)
 	for l in $links
 	do
 		echo `readlink $l`
