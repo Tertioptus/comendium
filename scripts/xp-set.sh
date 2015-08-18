@@ -18,8 +18,6 @@ else # Find field and update
 	OIFS=$IFS
 	IFS='|'
 	FIELD_SET=($BASE_PATH)
-	IFS=$OIFS
-	
 	for field in ${FIELD_SET[@]}
 	do
 		if [[ ${#NEW_PATH}>0 ]]
@@ -34,10 +32,9 @@ else # Find field and update
 			NEW_PATH+=$field
 		fi
 	done
+	IFS=$OIFS
 fi
 
 cd ..
-
-mv "${CURRENT_PATH}" "`dirname ${CURRENT_PATH}`/${NEW_PATH}"
-
+mv "${CURRENT_PATH}" "${CURRENT_PATH%/s*}${NEW_PATH#*.}"
 cd "${NEW_PATH}"
