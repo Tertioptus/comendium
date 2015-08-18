@@ -7,7 +7,7 @@ then
 	if [ -n POINTS_DIRS ]
 	then
 		POINTS=${POINTS_DIRS[0]:7}
-  		LEVEL=$((99-$POINTS)) 
+  		LEVEL=$((100-$POINTS)) 
 	fi
 else
 	links=(`ls dependent.*`)
