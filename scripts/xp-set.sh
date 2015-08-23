@@ -35,6 +35,10 @@ else # Find field and update
 	IFS=$OIFS
 fi
 
-cd ..
-mv "${CURRENT_PATH}" "${CURRENT_PATH%/s*}/${NEW_PATH#*.}"
-cd "${NEW_PATH}"
+MOVE_PATH="${CURRENT_PATH%/s*}/${NEW_PATH#*.}"
+if [[ ! "$CURRENT_PATH" =~ "$MOVE_PATH" ]]
+then
+	cd ..
+	mv "${CURRENT_PATH}" "${MOVE_PATH}"
+	cd "${NEW_PATH}"
+fi

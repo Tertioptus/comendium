@@ -21,7 +21,7 @@ rm "dependency.$1" -f
 ln -s "$PARENT_PATH" "dependency.$1"
 
 #3.  set this story to suspended
-xp-set s:s
+xp set s:s
 
 #4.  create symbolic link to this current story in dependent story
 cd "dependency.$1"
