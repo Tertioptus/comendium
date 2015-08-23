@@ -36,5 +36,5 @@ else # Find field and update
 fi
 
 cd ..
-mv "${CURRENT_PATH}" "${CURRENT_PATH%/s*}${NEW_PATH#*.}"
+mv "${CURRENT_PATH}" "${CURRENT_PATH%/s*}/${NEW_PATH#*.}"
 cd "${NEW_PATH}"
