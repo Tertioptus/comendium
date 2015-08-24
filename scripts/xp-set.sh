@@ -27,9 +27,9 @@ else # Find field and update
 
 		if [[ $field =~ $FIELD_TYPE:.* ]]
 		then
-			NEW_PATH+=$1
+			NEW_PATH+="$1"
 		else
-			NEW_PATH+=$field
+			NEW_PATH+="$field"
 		fi
 	done
 	IFS=$OIFS
