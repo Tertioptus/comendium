@@ -1,6 +1,7 @@
 #!/bin/bash
+set -x
 
-
+##### GET LEVEL #####
 if [[ `pwd` =~ c:feature ]]
 then
 	POINTS_DIRS+=(`ls points.*`)
@@ -11,11 +12,22 @@ then
 	fi
 else
 	links=(`ls dependent.*`)
+	MAX=99
 	for l in $links
 	do
-		echo `readlink $l`
+		realPath=`readlink ${l%@}`
+		left=${realPath%|i:*}
+		echo left: $left
+		right=${left#*|l:}
+		echo right: $right
+		if [[ 99 -gt $right ]] 
+		then
+			MAX=$right
+		fi
 	done
-	if [[ -n $links  ]] 
+	MAX=$(($MAX-1))
+	echo Max: $MAX
+	if [[ -n $links ]] 
 	then
 		echo "LEVEL= lowest level among dependents - number of dependents"
 	else	#Orphan the story
