@@ -1,41 +1,56 @@
 #!/bin/bash
-set -x
+
+HOME=`pwd`
 
 ##### GET LEVEL #####
-if [[ `pwd` =~ c:feature ]]
+if [[ $HOME =~ c:feature ]]
 then
-	POINTS_DIRS+=(`ls points.*`)
+	POINTS_DIRS+=(`printf '%s\n' points.*`)
 	if [ -n POINTS_DIRS ]
 	then
 		POINTS=${POINTS_DIRS[0]:7}
   		LEVEL=$((100-$POINTS)) 
 	fi
 else
-	links=(`ls dependent.*`)
+	links=(`printf '%s\n' dependent.*`)
 	MAX=99
-	for l in $links
-	do
-		realPath=`readlink ${l%@}`
-		left=${realPath%|i:*}
-		echo left: $left
-		right=${left#*|l:}
-		echo right: $right
-		if [[ 99 -gt $right ]] 
-		then
-			MAX=$right
-		fi
-	done
 	MAX=$(($MAX-1))
 	echo Max: $MAX
 	if [[ -n $links ]] 
 	then
-		echo "LEVEL= lowest level among dependents - number of dependents"
+		for l in $links
+		do
+			realPath=`readlink ${l%@}`
+			left=${realPath%|i:*}
+			echo left: $left
+			right=${left#*|l:}
+			echo right: $right
+			if [[ 99 -gt $right ]] 
+			then
+				LEVEL=$right
+			fi
+		done
 	else	#Orphan the story
-    		echo "xp-set s:0"
+			#xp set s:0
     		LEVEL=00
 	fi
 fi
 
-echo `pwd`
-echo $LEVEL
-#xp-set l:$LEVEL
+echo LEVEL: $LEVEL
+#xp set l:$LEVEL
+HOME=`pwd`
+
+dependencies=(`printf '%s\n' dependency.*`)
+for dependency in $dependencies
+do
+	dependencyId=${dependency#*dependency.}
+	echo dependencyId: $dependencyId
+	#xp depend ${dependencyId%@}	
+	realPath=`readlink dependency.${dependencyId%@}`
+	echo dependency real path: $realPath
+	#cd -P "$realPath"
+	#xp-tally
+done
+
+echo $HOME
+#cd "$HOME"
