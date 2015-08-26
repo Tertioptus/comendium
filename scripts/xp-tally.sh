@@ -14,34 +14,38 @@ function run (){
 		fi
 	else
 		links=(`printf '%s\n' dependent.*`)
-		MAX=99
-		echo Max: $MAX
+		MIN=99
+		COUNT=0
+		echo Max: $MIN
 		if [[ -n $links ]] 
 		then
 			for l in $links
 			do
-				realPath=`readlink ${l%@}`
-				left=${realPath%|i:*}
-				echo left: $left
-				right=${left#*|l:}
-				echo right: $right
-				if [[ $MAX -gt $right ]] 
+				if [ -h "$l" ]
 				then
-					MAX=$right
+					realPath=`readlink ${l%@}`
+					left=${realPath%|i:*}
+					echo left: $left
+					right=${left#*|l:}
+					echo right: $right
+					if [[ $MIN -gt $right ]] 
+					then
+						MIN=$right
+					fi
+					COUNT=$(($COUNT+1))
 				fi
 			done
-				LEVEL=$(($MAX-1))
+			LEVEL=$(($MIN-($COUNT-1)))
 		else	#Orphan the story
-				xp set s:0
-				LEVEL=00
+			xp set s:0
+			LEVEL=00
 		fi
 	fi
 	echo LEVEL: $LEVEL
 	xp set l:$LEVEL
 	local ORIGINAL_STORY_HOME_DIRECTORY=`pwd`
 
-	local dependency_filter="dependency.*"
-	local dependencies=(`printf '%s\n' $dependency_filter`)
+	local dependencies=(`printf '%s\n' dependency.*`)
 	for dependency in $dependencies
 	do
 		echo dependency: $dependency
@@ -62,3 +66,4 @@ function run (){
 }
 
 run
+
