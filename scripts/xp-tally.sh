@@ -48,6 +48,7 @@ function run (){
 	local ORIGINAL_STORY_HOME_DIRECTORY=`pwd`
 
 	local dependencies=(`printf '%s\n' dependency.*`)
+	local OPEN_DEPENDENCY_COUNT=0
 	for dependency in ${dependencies[@]}
 	do
 		echo dependency: $dependency
@@ -58,13 +59,21 @@ function run (){
 			xp depend ${dependencyId%@}	
 			realPath=`readlink dependency.${dependencyId%@}`
 			echo dependency real path: $realPath
-			cd -P "$realPath"
-			run
+			if [[ ! $realPath =~ "s:x" ]]
+			then
+				OPEN_DEPENDENCY_COUNT=$(($OPEN_DEPENDENCY_COUNT+1))
+				cd -P "$realPath"
+				run
+			fi
 		fi
 
 		echo home: $ORIGINAL_STORY_HOME_DIRECTORY
 		cd "$ORIGINAL_STORY_HOME_DIRECTORY"
 	done
+	if [ $OPEN_DEPENDENCY_COUNT -eq 0 ] && [[ $ORIGINAL_STORY_HOME_DIRECTORY =~ "s:s" ]]
+	then
+		xp set s:a
+	fi
 }
 
 run
