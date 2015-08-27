@@ -10,7 +10,9 @@ function run (){
 		if [ -n POINTS_DIRS ]
 		then
 			POINTS=${POINTS_DIRS[0]:7}
-			LEVEL=$((100-$POINTS)) 
+			LEVEL=$((100-$POINTS))
+		else
+			echo Please set points for this feature.
 		fi
 	else
 		links=(`printf '%s\n' dependent.*`)
@@ -19,7 +21,7 @@ function run (){
 		echo Max: $MIN
 		if [[ -n $links ]] 
 		then
-			for l in $links
+			for l in ${links[@]}
 			do
 				if [ -h "$l" ]
 				then
@@ -46,7 +48,7 @@ function run (){
 	local ORIGINAL_STORY_HOME_DIRECTORY=`pwd`
 
 	local dependencies=(`printf '%s\n' dependency.*`)
-	for dependency in $dependencies
+	for dependency in ${dependencies[@]}
 	do
 		echo dependency: $dependency
 		if [ -h "$dependency" ]
@@ -59,10 +61,10 @@ function run (){
 			cd -P "$realPath"
 			run
 		fi
-	done
 
-	echo home: $ORIGINAL_STORY_HOME_DIRECTORY
-	cd "$ORIGINAL_STORY_HOME_DIRECTORY"
+		echo home: $ORIGINAL_STORY_HOME_DIRECTORY
+		cd "$ORIGINAL_STORY_HOME_DIRECTORY"
+	done
 }
 
 run
