@@ -11,7 +11,7 @@ aspect/
 		profile subscriptions
 
 
-s:[status,1]|l:[level,2]|i:[backlog id,2]-[story id,2]|c:[context,*]|u:[user/actor,*]|a:[action/behavior,*]|r:[resource,*]/
+s:[status,1]|l:[level,2]|i:[backlog id,2]-[story id,2]|c:[context,*]|u:[user/unit/actor,*]|a:[action/behavior,*]|r:[resource,*]/
 	tag.story
 	?narrative
 	+scenario.[Scenario]/
@@ -34,6 +34,7 @@ s - status, labels set such that the alphanumeric ordering represents priority o
 	c - configure/code/construct
 	s - suspended, waiting for story deliverable
 	x - completed/done/closed
+	z - sleep/dormant
 
 l - level, priority ranking system
 	Number of dependents minus lowest level of dependents
