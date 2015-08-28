@@ -20,8 +20,11 @@ unset $IFS #or IFS=$' \t\n'
 rm "dependency.$1" -f
 ln -s "$PARENT_PATH" "dependency.$1"
 
-#3.  set this story to suspended
-xp set s:s
+#3.  set this story to suspended, if dependency not closed
+if [[ ! "$PARENT_PATH" =~ s:x ]]
+then
+	xp set s:s
+fi
 
 #4.  create symbolic link to this current story in dependent story
 cd "dependency.$1"

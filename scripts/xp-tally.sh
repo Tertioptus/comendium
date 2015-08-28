@@ -18,7 +18,6 @@ function run (){
 		links=(`printf '%s\n' dependent.*`)
 		MIN=99
 		COUNT=0
-		echo Max: $MIN
 		if [[ -n $links ]] 
 		then
 			for l in ${links[@]}
@@ -27,9 +26,7 @@ function run (){
 				then
 					realPath=`readlink ${l%@}`
 					left=${realPath%|i:*}
-					echo left: $left
 					right=${left#*|l:}
-					echo right: $right
 					if [[ $MIN -gt $right ]] 
 					then
 						MIN=$right
@@ -43,22 +40,17 @@ function run (){
 			LEVEL=00
 		fi
 	fi
-	echo LEVEL: $LEVEL
 	xp set l:$LEVEL
 	local ORIGINAL_STORY_HOME_DIRECTORY=`pwd`
-
 	local dependencies=(`printf '%s\n' dependency.*`)
 	local OPEN_DEPENDENCY_COUNT=0
 	for dependency in ${dependencies[@]}
 	do
-		echo dependency: $dependency
 		if [ -h "$dependency" ]
 		then
 			dependencyId=${dependency#*dependency.}
-			echo dependencyId: $dependencyId
 			xp depend ${dependencyId%@}	
 			realPath=`readlink dependency.${dependencyId%@}`
-			echo dependency real path: $realPath
 			if [[ ! $realPath =~ "s:x" ]]
 			then
 				OPEN_DEPENDENCY_COUNT=$(($OPEN_DEPENDENCY_COUNT+1))
@@ -67,11 +59,11 @@ function run (){
 			fi
 		fi
 
-		echo home: $ORIGINAL_STORY_HOME_DIRECTORY
 		cd "$ORIGINAL_STORY_HOME_DIRECTORY"
 	done
 	if [ $OPEN_DEPENDENCY_COUNT -eq 0 ] && [[ $ORIGINAL_STORY_HOME_DIRECTORY =~ "s:s" ]]
 	then
+		cd "$ORIGINAL_STORY_HOME_DIRECTORY"
 		xp set s:a
 	fi
 }
