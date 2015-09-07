@@ -1,19 +1,23 @@
 #!/bin/bash
+OIFS=$IFS
+root="$(xp root)/backlog"
 
-#find compendium root
+IFS= read -p "Status: u: " STATUS  
+IFS= read -p "Context: " CONTEXT
 
-#append backlog
+if [[ $CONTEXT =~ feature ]]
+then
+	IFS= read -p "Points: " POINTS
+fi
+IFS= read -p "User: " USER
+IFS= read -p "Action: " ACTION
+IFS= read -p "Resource:" RESOURCE
+IFS=$OIFS
 
-read -p "Status: u: " STATUS  
-read -p " Points: 00: " POINTS
-read -p "Id: " ID
-read -p "Context: " CONTEXT
-read -p "User: " USER
-read -p "Action: " ACTION
-read -p "Resource:" RESOURCE
-
-STORY_PATH="s:$STATUS|p:$POINTS|i:$ID|c:$CONTEXT|u:$USER|a:$ACTION|r:$RESOURCE"
+STORY_PATH=$root/"s:$STATUS|l:$LEVEL|i:$ID|c:$CONTEXT|u:$USER|a:$ACTION|r:$RESOURCE"
 mkdir $STORY_PATH
 cd $STORY_PATH
 
 touch tag.story
+
+echo $ID
