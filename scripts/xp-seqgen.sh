@@ -1,17 +1,16 @@
 #!/bin/bash
 root=$(xp root)
 
-function getLast() {
-	
-	last=$(ls|awk -F"|" '{print substr($'3', $1 , 2)}'|sort|tail -1)
+function printLast() {
+	echo $(ls|awk -F"|" "{print substr(\$3, $1 , 2)}"|sort|tail -1)
 }
 
-if [[ $1 =~ ^[0-9]+-[0-9]+ ]]
+if [[ $1 =~ ^[0-9]{2}$ ]]
 then
-	last=$(ls|awk -F"|" '{print substr($3, 6, 2)}'|sort|tail -1)
+	last=$(printLast 6)
 else
-	last=$(ls|awk -F"|" '{print substr($3, 3, 2)}'|sort|tail -1)
+	last=$(printLast 3)
 fi
 
 next=$(($last+1))
-echo $next
+echo `printf %02d $next`
