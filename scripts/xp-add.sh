@@ -1,14 +1,21 @@
 #!/bin/bash
 OIFS=$IFS
 root="$(xp root)/backlog"
+LEVEL="00"
 
 IFS= read -p "Status: u: " STATUS  
 IFS= read -p "Context: " CONTEXT
 
-if [[ $CONTEXT =~ feature ]]
+# Is backlog Id provided?
+if [[ $1 =~ ^[0-9]{2}$ ]]
 then
+	ID=$(xp seqgen $1)
+else
+	CONTEXT="feature"	
+	ID=$(xp seqgen)
 	IFS= read -p "Points: " POINTS
 fi
+
 IFS= read -p "User: " USER
 IFS= read -p "Action: " ACTION
 IFS= read -p "Resource:" RESOURCE
