@@ -32,4 +32,20 @@ uninstall:
 	rm -rf $(INSTALL_DIR)
 	sed -i '/compendium/ d' ~/.bashrc
 
+install-dev:
+	@echo ""
+	@echo "Installing development xp"
+
+	echo "# compendium             #" >> ~/.bashrc
+	
+	echo "alias xp=\". $(PWD)/scripts/xp.sh\"" >> ~/.bashrc
+
+	echo "# compendium END #" >> ~/.bashrc
+	
+	exec bash
+	@echo ''
+	@echo 'USAGE:'
+	@echo '------'
+	
+
 .PHONY: all install
