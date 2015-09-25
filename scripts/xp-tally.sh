@@ -9,6 +9,8 @@ function run (){
 		POINTS_DIRS+=(`printf '%s\n' points.*`)
 		if [ -n POINTS_DIRS ]
 		then
+			echo points dirs: $POINTS_DIRS
+			echo points: ${POINTS_DIRS[0]:7}
 			POINTS=${POINTS_DIRS[0]:7}
 			LEVEL=$((100-$POINTS))
 		else

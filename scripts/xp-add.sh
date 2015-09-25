@@ -3,16 +3,16 @@ OIFS=$IFS
 root="$(xp root)/backlog"
 LEVEL="00"
 
-IFS= read -p "Status: u: " STATUS  
-IFS= read -p "Context: " CONTEXT
+IFS= read -p "Status: " STATUS  
 
 # Is backlog Id provided?
 if [[ $1 =~ ^[0-9]{2}$ ]]
 then
 	ID=$(xp seqgen $1)
+	IFS= read -p "Context: " CONTEXT
 else
 	CONTEXT="feature"	
-	ID=$(xp seqgen)
+	ID=$(xp seqgen)-00
 	IFS= read -p "Points: " POINTS
 fi
 
