@@ -11,7 +11,7 @@ CHILD_ID=${CHILD_STORY:13:5}
 RESULTS=()
 
 #0.  if parameter is add
-if [[ $1=~ ^add$ ]]
+if [[ $1 =~ ^add$ ]]
 then
 	ID=$(xp add $BACKLOG_ID)
 fi
