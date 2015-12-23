@@ -17,10 +17,4 @@ function findRoot() {
 
 COMPENDIUM_ROOT=$(findRoot ".compendium")
 
-if [[ -z $COMPENDIUM_ROOT ]]
-then	
-	GIT_ROOT=`git rev-parse --show-cdup`
-	COMPENDIUM_ROOT=${GIT_ROOT}compendium
-fi
-
 echo $COMPENDIUM_ROOT

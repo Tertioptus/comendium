@@ -1,6 +1,6 @@
 # Compendium
 
-Compendium is a agile project file-based repository and taskboard in one. 
+Compendium is a file-based project repository and taskboard for agile team collaboration and story management. 
 
 ## Installation
 ## Creating a repository
@@ -13,13 +13,31 @@ An initial directory can be specified by appending it to the init command:
 
 `xp init [directory]`
 
+Also, added to the root directory, a "backlog" folder for story tracking and a "history" folder for releases.
+
+[repository]/
+	
+> .compendium
+
+> backlog/
+
+> history/
+
 ## Adding a story
-	### Understanding the story schema
-	#### From the Backlog
-	#### Within the story
+[Not documented yet]
+### Understanding the story schema
+[Not documented yet]
+#### From the backlog
+[Not documented yet]
+#### Within a story
+[Not documented yet]
 ## Modifying a story
+[Not documented yet]
 ## Relating two stories
+[Not documented yet]
 ## Tallying the backlog score
+[Not documented yet]
 ## Adding a scenario to a story
+[Not documented yet]
 
 

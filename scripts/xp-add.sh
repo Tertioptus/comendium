@@ -11,7 +11,7 @@ then
 	ID=$(xp seqgen $1)
 	IFS= read -p "Context: " CONTEXT
 else
-	CONTEXT="feature"	
+	CONTEXT="f"	
 	ID=$(xp seqgen)-00
 	IFS= read -p "Points: " POINTS
 fi
@@ -21,7 +21,7 @@ IFS= read -p "Action: " ACTION
 IFS= read -p "Resource:" RESOURCE
 IFS=$OIFS
 
-STORY_PATH=$root/"s:$STATUS|l:$LEVEL|i:$ID|c:$CONTEXT|u:$USER|a:$ACTION|r:$RESOURCE"
+STORY_PATH=$root/"s:$STATUS|l:$LEVEL|i:$ID|c:$CONTEXT|n:$USER $ACTION $RESOURCE"
 mkdir $STORY_PATH
 cd $STORY_PATH
 

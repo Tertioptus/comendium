@@ -1,7 +1,12 @@
 #!/bin/bash
 
-XP_ROOT=`xp-root`
+#Check if parameter exist
+if [[ -n $1 ]]
+then
+	mkdir $1
+	cd $1
+fi
 
-mkdir $XP_ROOT
-
-cd $XP_ROOT
+touch .compendium
+mkdir backlog 2> /dev/null
+mkdir "history" 2> /dev/null
