@@ -9,13 +9,13 @@ The following terminal command creates **.compendium** file in the current direc
 
 `xp init`
 
-An initial directory can be specified by appending it to the init command:
+An initial repository name can be specified by appending it to the init command:
 
-`xp init [directory]`
+`xp init [repository name]`
 
 Also, added to the root directory, a "backlog" folder for story tracking and a "history" folder for releases.
 
-[repository]/
+[repository name]/
 	
 > .compendium
 
