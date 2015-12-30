@@ -16,6 +16,8 @@ install:
 	echo "alias xp=\". $(INSTALL_DIR)/xp.sh\"" >> ~/.bashrc
 
 	echo "# compendium END #" >> ~/.bashrc
+
+	make deploy-manual -- no-print-directory
 	
 	exec bash
 	@echo ''
@@ -46,6 +48,10 @@ install-dev:
 	@echo ''
 	@echo 'USAGE:'
 	@echo '------'
-	
+
+deploy-manual:
+	cp manual xp.1
+	gzip -f xp.1
+	mv xp.1.gz "`manpath`/man1/xp.1.gz"
 
 .PHONY: all install
