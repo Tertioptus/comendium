@@ -18,20 +18,22 @@ FIELD_SET=($BASE_PATH)
 IFS=$OIFS
 
 for field in ${FIELD_SET[@]}
-do
+do		
 	if [[ $field =~ s:.* ]]; then STATUS=$field; fi
 	if [[ $field =~ l:.* ]]; then LEVEL=$field; fi
 	if [[ $field =~ i:.* ]]; then IDENTIFICATION=$field; fi
-	if [[ $field =~ c:.* ]]; then CONTEXT=$field; fi
-	if [[ $field =~ u:.* ]]; then USER=$field; fi
-	if [[ $field =~ a:.* ]]; then ACTION=$field; fi
-	if [[ $field =~ r:.* ]]; then RESOURCE=$field; fi
-	
-	
-	if [[ $field =~ p:.* ]]; then LEVEL=l:${field:2:2}; fi
+
+	if [[ $PWD =~ c:.*u:.*a:.*r:.* ]]
+	then
+		if [[ $field =~ c:.* ]]; then CONTEXT=$field; fi
+		if [[ $field =~ u:.* ]]; then USER=$field; fi
+		if [[ $field =~ a:.* ]]; then ACTION=$field; fi
+		if [[ $field =~ r:.* ]]; then RESOURCE=$field; fi
+		if [[ $field =~ p:.* ]]; then LEVEL=l:${field:2:2}; fi
+	fi
 done
 
-NEW_PATH="$STATUS|$LEVEL|$IDENTIFICATION|$CONTEXT|$USER|$ACTION|$RESOURCE"
+NEW_PATH="$STATUS|$LEVEL|$IDENTIFICATION|$CONTEXT|$NARRATIVE"
 
 cd ..
 

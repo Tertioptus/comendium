@@ -10,8 +10,7 @@ aspect/
 		user
 		profile subscriptions
 
-
-s:[status,1]|l:[level,2]|i:[backlog id,2]-[story id,2]|c:[context,*]|u:[user/unit/actor,*]|a:[action/behavior,*]|r:[resource,*]/
+s:[status,1]|l:[level,2]|i:[backlog id,2]-[story id,2]|a:[architecture,1]|n:[story narrative,+]/
 	tag.story
 	?narrative
 	+scenario.[Scenario]/
@@ -19,8 +18,8 @@ s:[status,1]|l:[level,2]|i:[backlog id,2]-[story id,2]|c:[context,*]|u:[user/uni
 	?points.[feature story points]
 	contribution:[comma delimited user names]
 		achievement.[Achievement]
-	*dependency.[track id]-[story id]/
-	*dependent.[track id]-[story id]/
+	*dependency.[backlog id]-[story id]/
+	*dependent.[backlog id]-[story id]/
 	*bug.[Bug]
 	*tag.[keyword]
 
@@ -38,3 +37,12 @@ s - status, labels set such that the alphanumeric ordering represents priority o
 
 l - level, priority ranking system
 	Number of dependents minus lowest level of dependents
+
+a - application architecture layer
+	b - business
+	d - data
+	e - external
+	f - feature
+	p - presentation
+	s - service
+	x - crosscutting concerns

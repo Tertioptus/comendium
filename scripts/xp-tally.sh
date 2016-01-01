@@ -6,10 +6,10 @@ function run (){
 	##### GET LEVEL #####
 	if [[ $ORIGINAL_STORY_HOME_DIRECTORY =~ c:feature ]]
 	then
-		POINTS_DIRS+=(`printf '%s\n' points.*`)
+		POINTS_DIR=(`printf '%s\n' points.*`)
 		if [ -n POINTS_DIRS ]
 		then
-			POINTS=${POINTS_DIRS[0]:7}
+			POINTS=${POINTS_DIR[0]:7}
 			LEVEL=$((100-$POINTS))
 		else
 			echo Please set points for this feature.
