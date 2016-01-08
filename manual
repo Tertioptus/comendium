@@ -5,16 +5,12 @@
 .SH NAME
 xp \- the bash client for compendium, a file-based story tracking system
 .SH SYNOPSIS
-.B xp [-bar] [-c
-.I config-file
-.B ]
+.B xp [command] [<args>]
 .I file
 .B ...
 .SH DESCRIPTION
-.B foo
-frobnicates the bar library by tweaking internal
-symbol tables. By default it parses all baz segments
-and rearranges them in reverse order by time for the
+.B xp
+utility suite for manipulating and maintaining Compendium file structure.
 .BR xyzzy (1)
 linker to find them. The symdef entry is then compressed
 using the WBG (Whiz-Bang-Gizmo) algorithm.
