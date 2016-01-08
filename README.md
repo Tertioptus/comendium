@@ -24,7 +24,25 @@ Also, added to the root directory, a "backlog" folder for story tracking and a "
 > history/
 
 ## Adding a story
-[Not documented yet]
+
+A feature story can be added by making a directory in the backlog folder with the following structure:
+
+`s:[status,1]|l:[level,2]|a:[architecture,1]|n:[story narrative,+]/`
+
+And then adding the following files in the story directory:
+
+[story directory]/
+> tag.story
+
+> \#[hash code]
+
+The xp tool set can be used to initiate a story entry session by typing the following command:
+
+`xp add`
+
+You will then be guided through the story building by a series of terminal prompts.
+
+
 ### Understanding the story schema
 [Not documented yet]
 #### From the backlog

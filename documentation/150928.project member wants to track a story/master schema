@@ -14,7 +14,7 @@ s:[status,1]|l:[level,2]|a:[architecture,1]|n:[story narrative,+]/
 	tag.story
 	#[hash code]
 	contribution:[comma delimited user names]
-		achievement.[Achievement]
+		+achievement.[technical achievement]
 	+scenario.[Scenario]/
 		+test.[pass/fail]|[automated test/product owner]
 	?narrative

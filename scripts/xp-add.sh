@@ -5,26 +5,28 @@ LEVEL="00"
 
 IFS= read -p "Status: " STATUS  
 
-# Is backlog Id provided?
+# Is story hash provided?
 if [[ $1 =~ ^[0-9]{2}$ ]]
 then
-	ID=$(xp seqgen $1)
-	IFS= read -p "Context: " CONTEXT
+	IFS= read -p "Application architecture layer: " ARCHITECTURE
 else
 	CONTEXT="f"	
-	ID=$(xp seqgen)-00
 	IFS= read -p "Points: " POINTS
 fi
 
-IFS= read -p "User: " USER
-IFS= read -p "Action: " ACTION
-IFS= read -p "Resource:" RESOURCE
+IFS= read -p "Story narrative: " NARRATIVE
 IFS=$OIFS
 
-STORY_PATH=$root/"s:$STATUS|l:$LEVEL|i:$ID|c:$CONTEXT|n:$USER $ACTION $RESOURCE"
+STORY_PATH=$root/"s:$STATUS|l:$LEVEL|a:$ARCHITECTURE|n:$NARRATIVE"
 mkdir $STORY_PATH
 cd $STORY_PATH
 
-touch tag.story
+if [[ -z POINTS ]]
+then
+	touch points.$POINTS
+fi
 
-echo $ID
+touch tag.story
+touch "#`echo -n $PWD$(date) | openssl dgst -md5 -binary | openssl enc -base64 | sed 's#/##g'`"
+
+echo "Story successfully created."
