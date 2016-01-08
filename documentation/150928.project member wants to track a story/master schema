@@ -10,16 +10,17 @@ aspect/
 		user
 		profile subscriptions
 
-s:[status,1]|l:[level,2]|i:[backlog id,2]-[story id,2]|a:[architecture,1]|n:[story narrative,+]/
+s:[status,1]|l:[level,2]|a:[architecture,1]|n:[story narrative,+]/
 	tag.story
+	#[hash code]
 	?narrative
 	+scenario.[Scenario]/
 		+test.[pass/fail]|[automated test/product owner]
 	?points.[feature story points]
 	contribution:[comma delimited user names]
 		achievement.[Achievement]
-	*dependency.[backlog id]-[story id]/
-	*dependent.[backlog id]-[story id]/
+	*predecessor.#[story hash code]/
+	*successor.#[story hash code]/
 	*bug.[Bug]
 	*tag.[keyword]
 
