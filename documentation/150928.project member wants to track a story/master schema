@@ -13,12 +13,12 @@ aspect/
 s:[status,1]|l:[level,2]|a:[architecture,1]|n:[story narrative,+]/
 	tag.story
 	#[hash code]
-	?narrative
-	+scenario.[Scenario]/
-		+test.[pass/fail]|[automated test/product owner]
-	?points.[feature story points]
 	contribution:[comma delimited user names]
 		achievement.[Achievement]
+	+scenario.[Scenario]/
+		+test.[pass/fail]|[automated test/product owner]
+	?narrative
+	?points.[feature story points]
 	*predecessor.#[story hash code]/
 	*successor.#[story hash code]/
 	*bug.[Bug]
