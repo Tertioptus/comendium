@@ -2,6 +2,7 @@
 
 Compendium is a file-based project repository and taskboard for agile team collaboration and story management. 
 
+### <a name="head1234"></a>A Heading in this SO entry!
 ## Installation
 ## Creating a repository
 
@@ -57,5 +58,7 @@ You will then be guided through the story building by a series of terminal promp
 [Not documented yet]
 ## Adding a scenario to a story
 [Not documented yet]
+
+and we can even [link](#head1234) to it so:
 
 
