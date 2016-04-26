@@ -2,11 +2,10 @@
 
 Compendium is a file-based project repository and taskboard for agile team collaboration and story management. 
 
-and we can even [link](#head1234) to it so:
-* [Modifying a story](#modify-story)
+## Contents
 
-## Installation
-## Creating a repository
+- [Installation](#installation)
+- [Creating a repository](#creating-a-repository)
 
 The following terminal command creates **.compendium** file in the current directory which signifies the root of a compendium repository:
 
@@ -60,7 +59,3 @@ You will then be guided through the story building by a series of terminal promp
 [Not documented yet]
 ## Adding a scenario to a story
 [Not documented yet]
-
-
-
-### <a name="head1234"></a>A Heading in this SO entry!
