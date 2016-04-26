@@ -6,6 +6,7 @@ Compendium is a file-based project repository and taskboard for agile team colla
 
 - [Installation](#installation)
 - [Creating a repository](#creating-a-repository)
+- [Adding a story](#adding-a-story)
 
 The following terminal command creates **.compendium** file in the current directory which signifies the root of a compendium repository:
 
