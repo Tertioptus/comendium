@@ -4,6 +4,7 @@ Compendium is a file-based project repository and taskboard for agile team colla
 
 and we can even [link](#head1234) to it so:
 * [Modifying a story](#modify-story)
+
 ## Installation
 ## Creating a repository
 
