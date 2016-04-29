@@ -1,6 +1,6 @@
 # Compendium
 
-Compendium is a file-based project repository and taskboard for agile team collaboration and story management. 
+Compendium is a user-story tracking system for agile team collaboration, project management, and resource sharing, that can be shared across multiple desktop terminals. 
 
 ## Contents
 
