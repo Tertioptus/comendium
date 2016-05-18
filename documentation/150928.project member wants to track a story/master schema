@@ -10,17 +10,17 @@ aspect/
 		user
 		profile subscriptions
 
-s:[status,1]|l:[level,2]|i:[backlog id,2]-[story id,2]|a:[architecture,1]|n:[story narrative,+]/
+s:[status code]|r:[rank]|a:[architecture]|n:[story narrative]/
+	xp#[hash code]
 	tag.story
-	?narrative
+	?narrative.md
 	+scenario.[Scenario]/
 		+test.[pass/fail]|[automated test/product owner]
-	?points.[feature story points]
-	contribution:[comma delimited user names]
+	contribution:[comma delimited user names]/
 		achievement.[Achievement]
-	*dependency.[backlog id]-[story id]/
-	*dependent.[backlog id]-[story id]/
-	*bug.[Bug]
+	?dependencies/
+		*xp#[dependency hash code]
+	CHANGELOG.md
 	*tag.[keyword]
 
 *-zero to many	+-one to many	?-zero or one
@@ -35,8 +35,7 @@ s - status, labels set such that the alphanumeric ordering represents priority o
 	x - completed/done/closed
 	z - sleep/dormant
 
-l - level, priority ranking system
-	Number of dependents minus lowest level of dependents
+rank = 81 - points
 
 a - application architecture layer
 	b - business
@@ -46,3 +45,5 @@ a - application architecture layer
 	p - presentation
 	s - service
 	x - crosscutting concerns
+
+*** bugs are represented as story scenarios ***
