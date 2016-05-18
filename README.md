@@ -1,9 +1,13 @@
 # Compendium
 
-Compendium is a file-based project repository and taskboard for agile team collaboration and story management. 
+Compendium is a user-story tracking system for agile team collaboration, project management, and resource sharing, that can be shared across multiple desktop terminals. 
 
-## Installation
-## Creating a repository
+## Contents
+
+- [Installation](#installation)
+- [Creating a repository](#creating-a-repository)
+- [Adding a story](#adding-a-story)
+	- [Understanding the story schema](#understanding-the-story-schema)
 
 The following terminal command creates **.compendium** file in the current directory which signifies the root of a compendium repository:
 
@@ -24,7 +28,25 @@ Also, added to the root directory, a "backlog" folder for story tracking and a "
 > history/
 
 ## Adding a story
-[Not documented yet]
+
+A feature story can be added by making a directory in the backlog folder with the following structure:
+
+`s:[status,1]|l:[level,2]|a:[architecture,1]|n:[story narrative,+]/`
+
+And then adding the following files in the story directory:
+
+[story directory]/
+> tag.story
+
+> \#[hash code]
+
+The xp tool set can be used to initiate a story entry session by typing the following command:
+
+`xp add`
+
+You will then be guided through the story building by a series of terminal prompts.
+
+
 ### Understanding the story schema
 [Not documented yet]
 #### From the backlog
@@ -39,5 +61,3 @@ Also, added to the root directory, a "backlog" folder for story tracking and a "
 [Not documented yet]
 ## Adding a scenario to a story
 [Not documented yet]
-
-

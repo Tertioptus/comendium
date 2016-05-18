@@ -10,6 +10,7 @@ aspect/
 		user
 		profile subscriptions
 
+<<<<<<< HEAD
 s:[status code]|r:[rank]|a:[architecture]|n:[story narrative]/
 	xp#[hash code]
 	tag.story
@@ -18,8 +19,11 @@ s:[status code]|r:[rank]|a:[architecture]|n:[story narrative]/
 		+test.[pass/fail]|[automated test/product owner]
 	contribution:[comma delimited user names]/
 		achievement.[Achievement]
+	*predecessor.#[story hash code]/
+	*successor.#[story hash code]/
 	?dependencies/
 		*xp#[dependency hash code]
+	*bug.[Bug]
 	CHANGELOG.md
 	*tag.[keyword]
 
