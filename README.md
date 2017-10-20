@@ -31,7 +31,15 @@ Also, added to the root directory, a "backlog" folder for story tracking and a "
 
 A feature story can be added by making a directory in the backlog folder with the following structure:
 
-`s:[status,1]|l:[level,2]|a:[architecture,1]|n:[story narrative,+]/`
+`[s.<status>][l.<level>][a.<architecture>]-<narrative>/`
+
+<status>	:= \d
+<level>		:= \d{2}
+<architecture>	:= \c
+<narrative> 	:= \w{1,100}(-<context>)?
+<context>	:= \(\w{1,20} <context>?\)
+
+e.g."[s.X][l.00][a.F]-Profiles Projection (Date (Any))"
 
 And then adding the following files in the story directory:
 
