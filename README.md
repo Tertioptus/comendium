@@ -33,13 +33,13 @@ A feature story can be added by making a directory in the backlog folder with th
 
 `[s.<status>][l.<level>][a.<architecture>]-<narrative>/`
 
-<status>	:= \d
+`<status>	:= \d
 <level>		:= \d{2}
 <architecture>	:= \c
 <narrative> 	:= \w{1,100}(-<context>)?
-<context>	:= \(\w{1,20} <context>?\)
+<context>	:= \(\w{1,20} <context>?\)`
 
-e.g."[s.X][l.00][a.F]-Profiles Projection (Date (Any))"
+`e.g."[s.X][l.00][a.F]-Profiles Projection (Date (Any))"`
 
 And then adding the following files in the story directory:
 
