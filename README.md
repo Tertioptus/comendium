@@ -81,19 +81,3 @@ The xp tool set can be used to initiate a story entry session by typing the foll
 `xp add`
 
 You will then be guided through the story building by a series of terminal prompts.
-
-
-### Understanding the story schema
-[Not documented yet]
-#### From the backlog
-[Not documented yet]
-#### Within a story
-[Not documented yet]
-## Modifying a story
-[Not documented yet]
-## Relating two stories
-[Not documented yet]
-## Tallying the backlog score
-[Not documented yet]
-## Adding a scenario to a story
-[Not documented yet]
