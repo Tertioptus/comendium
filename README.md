@@ -38,10 +38,10 @@ Grammar:
 - `<status>	:= \d`
 - `<level>	:= \d{2}`
 - `<architecture>	:= \c`
-- `<narrative> 	:= \w{1,100}(-<context>)?`
+- `<narrative> 	:= (\w{1,100}\.?){3}(-<context>)?`
 - `<context>	:= \(\w{1,20} <context>?\)`
 
-`e.g."[s.X][l.00][a.F]-Profiles Projection (Date (Any))"`
+`e.g."[s.X][l.00][a.F]-Profiles.Projection.Run (Date (Any))"`
 
 s - status, labels set such that the alphanumeric ordering represents priority of execution
 	
