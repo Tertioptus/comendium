@@ -33,34 +33,38 @@ A feature story can be added by making a directory in the backlog folder with th
 
 `[s.<status>][l.<level>][a.<architecture>]-<narrative>/`
 
-`<status>	:= \d'
-'<level>	:= \d{2}'
-'<architecture>	:= \c'
-'<narrative> 	:= \w{1,100}(-<context>)?'
-'<context>	:= \(\w{1,20} <context>?\)`
+Grammar:
+
+- `'<status>	:= \d'`
+- `'<level>	:= \d{2}'`
+- `'<architecture>	:= \c'`
+- `'<narrative> 	:= \w{1,100}(-<context>)?'`
+- `'<context>	:= \(\w{1,20} <context>?\)`
 
 `e.g."[s.X][l.00][a.F]-Profiles Projection (Date (Any))"`
 
 s - status, labels set such that the alphanumeric ordering represents priority of execution
-	[_] - unintitated/undocumented story
-	0 - orphaned, non-feature story without dependents / non-deliverable
-	a - audit, needs verification
-	b - bot it, needs an automated test
-	c - configure/code/construct
-	s - suspended, waiting for story deliverable
-	x - completed/done/closed
-	z - sleep/dormant
+	
+
+1. [_] - unintitated/undocumented story
+2. 0 - orphaned, non-feature story without dependents / non-deliverable
+3. a - audit, needs verification
+4. b - bot it, needs an automated test
+5. c - configure/code/construct
+6. s - suspended, waiting for story deliverable
+7. x - completed/done/closed
+8. z - sleep/dormant
 
 rank = 81 - points
 
-a - application architecture layer
-	b - business
-	d - data
-	e - external
-	f - feature
-	p - presentation
-	s - service
-	x - crosscutting concerns
+1. a - application architecture layer
+2. b - business
+3. d - data
+4. e - external
+5. f - feature
+6. p - presentation
+7. s - service
+8. x - crosscutting concerns
 	
 And then adding the following files in the story directory:
 
