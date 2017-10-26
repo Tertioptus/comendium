@@ -58,7 +58,9 @@ s - status, labels set such that the alphanumeric ordering represents priority o
 7. x - completed/done/closed
 8. z - sleep/dormant
 
-rank = 81 - points
+l - level, rank = 81 - points
+
+a - architecture
 
 1. a - application architecture layer
 2. b - business
