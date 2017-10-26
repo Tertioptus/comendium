@@ -41,6 +41,27 @@ A feature story can be added by making a directory in the backlog folder with th
 
 `e.g."[s.X][l.00][a.F]-Profiles Projection (Date (Any))"`
 
+s - status, labels set such that the alphanumeric ordering represents priority of execution
+	[_] - unintitated/undocumented story
+	0 - orphaned, non-feature story without dependents / non-deliverable
+	a - audit, needs verification
+	b - bot it, needs an automated test
+	c - configure/code/construct
+	s - suspended, waiting for story deliverable
+	x - completed/done/closed
+	z - sleep/dormant
+
+rank = 81 - points
+
+a - application architecture layer
+	b - business
+	d - data
+	e - external
+	f - feature
+	p - presentation
+	s - service
+	x - crosscutting concerns
+	
 And then adding the following files in the story directory:
 
 [story directory]/
