@@ -38,7 +38,10 @@ Grammar:
 - `<status>	:= \d`
 - `<level>	:= \d{2}`
 - `<architecture>	:= \c`
-- `<narrative> 	:= (\w{1,100}\.?){3}(<context>)*`
+- `<narrative> 	:= <subject>\.<object>\.<verb> (<context>)*`
+- `<subject> 	:= \w{1,100}`
+- `<object>	:= \w{1,100}`
+- `<verb>	:= \w{1,100}`
 - `<context>	:= \(\w{1,20} <context>?\)`
 
 `e.g."[s.X][l.00][a.F]-Profiles.Projection.Run (Date (Any))"`
