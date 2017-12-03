@@ -1,6 +1,6 @@
 # Compendium
 
-Compendium is a user-story tracking system for agile team collaboration, project management, and resource sharing, that can be shared across multiple desktop terminals. 
+Compendium is a user-story tracking specification for agile team collaboration, project management, and resource sharing.  XP is a companion script for the compendium specificaiton, that can be shared across multiple desktop terminals.
 
 ## Contents
 
@@ -36,8 +36,8 @@ A feature story can be added by making a directory in the backlog folder with th
 Grammar:
 
 - `<status>	:= \d`
+- `<layer>	:= \c`
 - `<level>	:= \d{2}`
-- `<architecture>	:= \c`
 - `<narrative> 	:= <subject>\.<object>\.<verb> (<context>)*`
 - `<subject> 	:= \w{1,100}`
 - `<object>	:= \w{1,100}`
@@ -46,35 +46,35 @@ Grammar:
 
 `e.g."[s.X][l.00][a.F]-Profiles.Projection.Run (Date (Any))"`
 
-s - status, labels set such that the alphanumeric ordering represents priority of execution
-	
+
+##status
+labels set such that the alphanumeric ordering represents priority of execution	
 
 1. [_] - unintitated/undocumented story
-2. 0 - orphaned, non-feature story without dependents / non-deliverable
-3. a - audit, needs verification
-4. b - bot it, needs an automated test
-5. c - configure/code/construct
+2. a - approved
+3. c - completed
+4. d - documented
+5. r - reserved, registered (story must have an owner)
 6. s - suspended, waiting for story deliverable
 7. x - completed/done/closed
 8. z - sleep/dormant
 
 l - level, rank = 81 - points
 
-a - architecture
+##Layer
 
-1. a - application architecture layer
 2. b - business
-3. d - data
-4. e - external
-5. f - feature
-6. p - presentation
-7. s - service
-8. x - crosscutting concerns
+3. i - interface
+4. l - logic
+5. p - persistence
+6. s - security
 	
 And then adding the following files in the story directory:
 
 [story directory]/
-> tag.story
+> narrative
+> (owner.<user email address>)?
+> (requirement.<required story>)*
 
 > \#[hash code]
 
