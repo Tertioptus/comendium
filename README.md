@@ -1,6 +1,6 @@
 # Compendium
 
-Compendium is a user-story tracking specification for agile team collaboration, project management, and resource sharing.  XP is a companion script for the compendium specificaiton, that can be shared across multiple desktop terminals.
+Compendium is a user-story tracking specification for agile team collaboration, project management, and resource sharing.  XP is a companion script for the compendium specification, that can be shared across multiple desktop terminals.
 
 ## Contents
 
@@ -31,7 +31,7 @@ Also, added to the root directory, a "backlog" folder for story tracking and a "
 
 A feature story can be added by making a directory in the backlog folder with the following structure:
 
-`[s.<status>][l.<level>][a.<architecture>]-<narrative>/`
+`<status><layer><level>-<narrative>/`
 
 Grammar:
 
@@ -44,7 +44,7 @@ Grammar:
 - `<verb>	:= \w{1,100}`
 - `<context>	:= \(\w{1,20} <context>?\)`
 
-`e.g."[s.X][l.00][a.F]-Profiles.Projection.Run (Date (Any))"`
+`e.g."XB00-Profiles.Projection.Run (Date (Any))"`
 
 
 ##status
