@@ -56,8 +56,8 @@ labels set such that the alphanumeric ordering represents priority of execution
 4. d - documented
 5. r - reserved, registered (story must have an owner)
 6. s - suspended, waiting for story deliverable
-7. x - completed/done/closed
-8. z - sleep/dormant
+7. x - cclosed
+8. z - asleep
 
 l - level, rank = 81 - points
 
