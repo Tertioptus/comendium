@@ -47,7 +47,7 @@ Grammar:
 `e.g."XB00-Profiles.Projection.Run (Date (Any))"`
 
 
-## Status
+### Status
 labels set such that the alphanumeric ordering represents priority of execution	
 
 1. [_] - unintitated/undocumented story
@@ -61,7 +61,7 @@ labels set such that the alphanumeric ordering represents priority of execution
 
 l - level, rank = 81 - points
 
-## Layer
+### Layer
 
 2. b - business
 3. i - interface
