@@ -73,7 +73,9 @@ And then adding the following files in the story directory:
 
 [story directory]/
 > narrative
+
 > \(owner.<user email address>\)?
+	
 > \(requirement.<required story>\)*
 
 > \#[hash code]
