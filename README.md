@@ -50,36 +50,35 @@ Grammar:
 ### Status
 labels set such that the alphanumeric ordering represents priority of execution	
 
-1. [_] - unintitated/undocumented story
-2. a - approved
-3. c - completed
-4. d - documented
-5. r - reserved, registered (story must have an owner)
-6. s - suspended, waiting for story deliverable
-7. x - cclosed
-8. z - asleep
+[_] - unintitated/undocumented story
+a - approved
+c - completed
+d - documented
+r - reserved, registered (story must have an owner)
+s - suspended, waiting for story deliverable
+x - cclosed
+z - asleep
 
 l - level, rank = 81 - points
 
 ### Layer
 
-2. b - business
-3. i - interface
-4. l - logic
-5. p - persistence
-6. s - security
+b - business
+i - interface
+l - logic
+p - persistence
+s - security
 	
 And then adding the following files in the story directory:
 
-[story directory]/...
+`[story directory]/...`
 
-...narrative
+`...narrative`
 
-...\(owner.\<user email address\>\)?
+`...\(owner.\<user email address\>\)?`
 	
-...\(requirement.\<required story\>\)*
-
-...\#[hash code]
+`...\(requirement.\<required story\>\)*`
+`...\#[hash code]`
 
 The xp tool set can be used to initiate a story entry session by typing the following command:
 
