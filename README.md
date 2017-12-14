@@ -21,11 +21,11 @@ Also, added to the root directory, a "backlog" folder for story tracking and a "
 
 `[repository name]/...`
 	
-`.../.compendium`
+- `.../.compendium`
 
-`.../backlog/`
+- `.../backlog/`
 
-`.../history/`
+-  `.../history/`
 
 ## Adding a story
 
@@ -73,13 +73,13 @@ And then adding the following files in the story directory:
 
 `[story directory]/...`
 
-- `...narrative`
+- `.../narrative`
 
-- `...\(owner.\<user email address\>\)?`
+- `.../\(owner.\<user email address\>\)?`
 	
-- `...\(requirement.\<required story\>\)*`
+- `.../\(requirement.\<required story\>\)*`
 
-- `...\#[hash code]`
+- `.../\#[hash code]`
 
 The xp tool set can be used to initiate a story entry session by typing the following command:
 
