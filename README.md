@@ -19,10 +19,15 @@ An initial repository name can be specified by appending it to the init command:
 
 Also, added to the root directory, a "backlog" folder for story tracking and a "history" folder for releases.
 
-`[repository name]/...`  
-	.compendium  
-	backlog/  
-	history/  
+The ideal directory structure would look like the following:
+
+`[code base root directory]/[repository name]/[compendium files]`
+
+Compendium files:
+
+- `.compendium` 
+- `backlog/`  
+- `history/`  
 
 ## Adding a story
 
@@ -47,7 +52,7 @@ Grammar:
 ### Status
 labels set such that the alphanumeric ordering represents priority of execution	
 
-- [_] - unintitated/undocumented story
+- [_] - uninitiated/undocumented story
 - a - approved
 - c - completed
 - d - documented
@@ -68,15 +73,17 @@ l - level, rank = 81 - points
 	
 And then adding the following files in the story directory:
 
-`[story directory]/...`
+`[story directory]/[story components]`
 
-- `.../narrative`
+Story components:
 
-- `.../\(owner.\<user email address\>\)?`
+- `narrative`
+
+- `\(owner.\<user email address\>\)?`
 	
-- `.../\(requirement.\<required story\>\)*`
+- `\(requirement.\<required story\>\)*`
 
-- `.../\#[hash code]`
+- `\#[hash code]`
 
 The xp tool set can be used to initiate a story entry session by typing the following command:
 
