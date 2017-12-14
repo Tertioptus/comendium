@@ -7,7 +7,7 @@ Compendium is a user-story tracking specification for agile team collaboration, 
 - [Installation](#installation)
 - [Creating a repository](#creating-a-repository)
 - [Adding a story](#adding-a-story)
-	- [Understanding the story schema](#understanding-the-story-schema)
+- [Understanding the story schema](#understanding-the-story-schema)
 
 The following terminal command creates **.compendium** file in the current directory which signifies the root of a compendium repository:
 
@@ -73,12 +73,13 @@ And then adding the following files in the story directory:
 
 `[story directory]/...`
 
-`...narrative`
+- `...narrative`
 
-`...\(owner.\<user email address\>\)?`
+- `...\(owner.\<user email address\>\)?`
 	
-`...\(requirement.\<required story\>\)*`
-`...\#[hash code]`
+- `...\(requirement.\<required story\>\)*`
+
+- `...\#[hash code]`
 
 The xp tool set can be used to initiate a story entry session by typing the following command:
 
