@@ -20,12 +20,9 @@ An initial repository name can be specified by appending it to the init command:
 Also, added to the root directory, a "backlog" folder for story tracking and a "history" folder for releases.
 
 `[repository name]/...`
-	
-- `.../.compendium`
-
-- `.../backlog/`
-
--  `.../history/`
+.compendium  
+backlog/  
+history/  
 
 ## Adding a story
 
