@@ -50,24 +50,24 @@ Grammar:
 ### Status
 labels set such that the alphanumeric ordering represents priority of execution	
 
-[_] - unintitated/undocumented story
-a - approved
-c - completed
-d - documented
-r - reserved, registered (story must have an owner)
-s - suspended, waiting for story deliverable
-x - cclosed
-z - asleep
+- [_] - unintitated/undocumented story
+- a - approved
+- c - completed
+- d - documented
+- r - reserved, registered (story must have an owner)
+- s - suspended, waiting for story deliverable
+- x - closed
+- z - asleep
 
 l - level, rank = 81 - points
 
 ### Layer
 
-b - business
-i - interface
-l - logic
-p - persistence
-s - security
+- b - business
+- i - interface
+- l - logic
+- p - persistence
+- s - security
 	
 And then adding the following files in the story directory:
 
