@@ -72,6 +72,7 @@ l - level, rank = 81 - points
 And then adding the following files in the story directory:
 
 [story directory]/...
+
 ...narrative
 
 ...\(owner.\<user email address\>\)?
