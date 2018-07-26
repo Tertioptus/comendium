@@ -37,8 +37,8 @@ A feature story can be added by making a directory in the backlog folder with th
 
 Grammar:
 
-- `<status>	:= \d`
-- `<layer>	:= \c`
+- `<status>	:= [_ACDRSXZacdrsx]`
+- `<layer>	:= [BILPSbilps]`
 - `<level>	:= \d{2}`
 - `<narrative> 	:= <subject>\.<object>\.<verb> (<context>)*`
 - `<subject> 	:= \w{1,100}`
