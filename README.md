@@ -37,14 +37,14 @@ A feature story can be added by making a directory in the backlog folder with th
 
 Grammar:
 
-- `<status>	:= [_ACDRSXZacdrsx]`
+- `<status>	:= [_ACDRSXZacdrsxz]`
 - `<layer>	:= [BILPSbilps]`
 - `<level>	:= \d{2}`
 - `<narrative> 	:= <subject>\.<object>\.<verb> (<context>)*`
 - `<subject> 	:= \w{1,100}`
 - `<object>	:= \w{1,100}`
 - `<verb>	:= \w{1,100}`
-- `<context>	:= \(\w{1,20} <context>?\)`
+- `<context>	:= (\w{1,20} <context>?)`
 
 `e.g."XB00-Profiles.Projection.Run (Date (Any))"`
 
