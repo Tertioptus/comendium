@@ -33,13 +33,13 @@ Compendium files:
 
 A feature story can be added by making a directory in the backlog folder with the following structure:
 
-`<status><layer><level>-<narrative>/`
+`<status><release><rank>-<narrative>/`
 
 Grammar:
 
 - `<status>	:= [_ACDRSXZacdrsxz]`
-- `<layer>	:= [BILPSbilps]`
-- `<level>	:= \d{2}`
+- `<release>	:= \d{2}`
+- `<rank>	:= \d{2}`
 - `<narrative> 	:= <subject>\.<object>\.<verb> (<context>)*`
 - `<subject> 	:= \w{1,100}`
 - `<object>	:= \w{1,100}`
@@ -61,15 +61,7 @@ labels set such that the alphanumeric ordering represents priority of execution
 - x - closed
 - z - asleep
 
-l - level, rank = 81 - points
-
-### Layer
-
-- b - business
-- i - interface
-- l - logic
-- p - persistence
-- s - security
+rank = 81 - points
 	
 And then adding the following files in the story directory:
 
