@@ -46,7 +46,7 @@ Grammar:
 - `<verb>	:= \w{1,100}`
 - `<context>	:= (\w{1,20} <context>?)`
 
-`e.g."XB00-Profiles.Projection.Run (Date (Any))"`
+`e.g."X0002-Profiles.Projection.Run (Date (Any))"`
 
 
 ### Status
